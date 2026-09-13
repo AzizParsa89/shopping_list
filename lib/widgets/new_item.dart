@@ -13,7 +13,22 @@ class _NewItemState extends State<NewItem> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Add a new item")),
-      body: Padding(padding: EdgeInsets.all(12), child: Text("The form")),
+      body: Padding(
+        padding: EdgeInsets.all(12),
+        child: Form(
+          child: Column(
+            children: [
+              TextFormField(
+                maxLength: 50,
+                decoration: InputDecoration(label: Text("Name")),
+                validator: (value) {
+                  return 'Demo...';
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
